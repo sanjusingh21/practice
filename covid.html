@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid API</title>
+    <style>
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table td,
+        .table th {
+            padding: 7px 15px;
+            text-align: left;
+            text-transform: capitalize;
+        }
+
+        .table th {
+            background-color: rgb(159, 191, 250);
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Covid API</h1>
+
+
+    <div id="showData"></div>
+
+    <script>
+
+        let showData = document.getElementById("showData");
+
+        let data = '';
+
+        let stateName = {
+            AN: 'Andaman and Nicobar Islands',
+            AP: 'Andhra Pradesh',
+            AR: 'Arunachal Pradesh',
+            AS: 'Assam',
+            BR: 'Bihar',
+            CH: 'Chandigarh',
+            CT: 'Chhattisgarh',
+            DD: 'Daman and Diu',
+            DL: 'Delhi',
+            DN: 'Dadra and Nagar Haveli',
+            GA: 'Goa',
+            GJ: 'Gujarat',
+            HP: 'Himachal Pradesh',
+            HR: 'Haryana',
+            JH: 'Jharkhand',
+            LK: 'Ladakh',
+            KA: 'Karnataka',
+            KL: 'Kerala',
+            LD: 'Lakshadweep',
+            MH: 'Maharashtra',
+            ML: 'Meghalaya',
+            MN: 'Manipur',
+            MP: 'Madhya Pradesh',
+            MZ: 'Mizoram',
+            NL: 'Nagaland',
+            OR: 'Odisha',
+            PB: 'Punjab',
+            PY: 'Puducherry',
+            RJ: 'Rajasthan',
+            SK: 'Sikkim',
+            TG: 'Telangana',
+            TN: 'Tamil Nadu',
+            TR: 'Tripura',
+            UP: 'Uttar Pradesh',
+            UT: 'Uttarakhand',
+            WB: 'West Bengal',
+            JK: 'Jammu and Kashmir',
+        }
+
+        async function getAPI() {
+            await fetch('https://data.covid19india.org/v4/min/data.min.json')
+                .then(response => response.json())
+                .then(apiData => {
+
+                    // creating a table
+                    data = "<table border='1' class='table'><thead><tr><th>state</th>";
+
+                    // setting the table heading
+                    for (const key1 in apiData.AP.total) {
+                        data += `<th>${key1}</th>`;
+                    }
+
+                    // setting the table data
+                    for (const key in apiData) {
+                        let byState = Object.keys(stateName).includes(key) ? stateName[key] : null;
+                        data += "</tr></thead><tbody><tr><td>" + byState + "</td>";
+                        // setting the table data
+                        for (const caseType in apiData[key].total) {
+                            if (caseType != "other") {
+                                data += `<td>${apiData[key].total[caseType]}</td>`;
+                            }
+                        }
+                    }
+
+                    // closing the table
+                    data += "</tbody></tr></table>";
+
+                    // appending the data to showData element of html
+                    showData.innerHTML = data;
+
+                }).catch(e => {
+                    console.log('There has been a problem with your fetch operation: ' + e.message);
+                });
+        }
+
+        // at first time page load
+        getAPI();
+
+        // calling api for every 30sec, to get updated data
+        setInterval(() => {
+            getAPI();
+        }, 1000 * 30);
+
+    </script>
+</body>
+
+</html>

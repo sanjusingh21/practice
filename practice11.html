@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="throttle">Click Me</button>
+
+    <script>
+
+
+        // function functionCurring(a) {
+        //     return function b(b) {
+        //         return function c(c) {
+        //             return a + b + c;
+        //         }
+        //     }
+        // }
+
+        // let result = functionCurring(1)(2)(3);
+
+        // console.log(result);
+
+        // function calculateVolume(length) {
+        //     return function (breadth) {
+        //         return function (height) {
+        //             return length * breadth * height;
+        //         }
+        //     }
+        // }
+        // console.log(calculateVolume(4)(5)(6));
+
+
+        // let sum = function (a) {
+        //     return function (b) {
+        //         if (b) {
+        //             return sum(a + b);
+        //         }
+        //         return a;
+        //     }
+        // }
+
+        // let result1 = sum(1)(2)(3)()
+        // console.log(result1)
+
+
+        // let colusureExample = function () {
+
+        //     let outerVariable = 1;
+
+        //     function inner() {
+        //         return outerVariable;
+        //     }
+        //     return inner;
+        // }
+
+        // let inner = colusureExample();
+
+        // console.log(inner());
+
+
+        // obj = {
+        //     fname: "sanju",
+        //     lname: "singh",
+        // }
+
+        // function fullname(argValue) {
+        //     console.log(this.fname + " " + this.lname + " " + argValue);
+        // }
+
+        // fullname.call(obj, [1, 2, 4]);
+
+
+        // // making an ajax request
+        // function loadData() {
+        //     let xhttp = new XMLHttpRequest();
+        //     xhttp.onload = function () {
+        //         console.log(this.responseText);
+        //     }
+        //     xhttp.onreadystatechange = function () {
+        //         if (this.readyState == 4 && this.status == 200) {
+        //             console.log(this.responseText);
+        //         }
+        //     }
+        //     xhttp.open("GET", "https://jsonplaceholder.typicode.com/todos/1");
+        //     xhttp.send();
+        // }
+
+        // loadData();
+
+
+        // // fetch api 
+        // fetch('https://jsonplaceholder.typicode.com/todos/1').then(response => response.json())
+        //     .then(data => console.log(data))
+        //     .catch(error => {
+        //         console.error('Error:', error);
+        //     });
+
+        // // iterator example
+        // let arr = [1, 2, 3, 4];
+
+        // let myItr = arr[Symbol.iterator]();
+        // console.log(myItr.next());
+
+
+        // genrator example
+        function* genratorExamp() {
+            let n = yield;
+            console.log(n);
+        }
+
+        let gen = genratorExamp();
+
+        console.log(gen.next("new world"));
+        console.log(gen.next());
+
+
+        // enumeration
+        const Color = {
+            RED: 1,
+            BLUE: 2,
+            GREEN: 3,
+            YELLOW: 4
+        };
+        Object.freeze(Color);
+        // Trying to add new colors fails silently:
+        Color.WHITE = 5;
+        console.log(Color)
+
+        console.log(Object.isFrozen(Color));
+
+
+        // debouncing
+        function debounce(func, wait, immediate) {
+            var timeout;
+
+            return function executedFunction() {
+                var context = this;
+                var args = arguments;
+
+                var later = function () {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                };
+
+                var callNow = immediate && !timeout;
+
+                clearTimeout(timeout);
+
+                timeout = setTimeout(later, wait);
+
+                if (callNow) func.apply(context, args);
+            };
+        };
+
+        var returnedFunction = debounce(function () {
+            console.log("12321");
+        }, 250);
+
+        returnedFunction();
+
+
+        // thortteling example
+        const btn = document.querySelector("#throttle");
+
+        // Throttling Function
+        const throttleFunction = (func, delay) => {
+
+            // Previously called time of the function
+            let prev = 0;
+            return (...args) => {
+                // Current called time of the function
+                let now = new Date().getTime();
+
+                // Logging the difference between previously
+                // called and current called timings
+                console.log(now - prev, delay);
+
+
+                // If difference is greater than delay call
+                // the function again.
+                if (now - prev > delay) {
+                    prev = now;
+
+                    // "..." is the spread operator here
+                    // returning the function with the
+                    // array of arguments
+                    return func(...args);
+                }
+            }
+        }
+        btn.addEventListener("click", throttleFunction(() => {
+            console.log("button is clicked")
+        }, 1500));
+
+
+        // event delgation
+
+        const customUI = document.createElement('ul');
+
+        function responding(event) {
+            if (event.target.nodeName == "LI") {
+                console.log("Responding");
+            }
+        }
+
+        for (var i = 1; i <= 10; i++) {
+            const newElement = document.createElement('li');
+            newElement.textContent = "This is line " + i;
+            customUI.appendChild(newElement);
+        }
+
+        customUI.addEventListener("click", responding);
+        document.getElementsByTagName("body")[0].append(customUI);
+
+
+
+
+        // protypla example
+
+
+        // object person
+        let person = {
+            talk: true,
+            Canfly() {
+                return "Sorry, Can't fly";
+            },
+        };
+        let person1 = {
+            talk1: true,
+            Canfly1() {
+                return "Sorry, Can't fly";
+            },
+        };
+        // Object GFGuser
+        let GFGuser = {
+            CanCode: true,
+            CanCook() {
+                return "Can't say";
+            },
+
+            //  Inheriting the properties and methods of person
+            __proto__: person,
+        };
+
+        // Printing on console
+        // Property of person
+        console.log("Can a GFG User talk: " + GFGuser.talk);
+
+        // Method of person
+        console.log("Can a GFG User fly: " + GFGuser.Canfly());
+
+        // Property of GFGuser
+        console.log("Can a GFG User code: " + GFGuser.CanCode);
+
+        // Method of GFGuser
+        console.log("Can a GFG User cook: " + GFGuser.CanCook())
+    </script>
+
+
+</body>
+
+</html>

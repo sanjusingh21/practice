@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: yellow;
+            background-color: red;
+            text-align: center;
+        }
+
+        #btn {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>testing a javascript</h1>
+    <p>100 is a number</p>
+    <button onclick="myfunction()">
+        answer!
+    </button>
+    <button id="btn" onclick="task()">
+        Task Done
+    </button>
+    <div>
+        <p>Is really task is done!</p>
+        <button onclick="done()">
+            Yup!</button>
+    </div>
+
+
+
+
+
+    <script>
+        var a = 100;
+        // console.log(typeof 100);
+        function myfunction() {
+            if (typeof (a) == 'number') {
+                alert("its a number");
+            } else {
+                alert("its not a number");
+            }
+        }
+
+        function task() {
+            let task = prompt('If task is completed?', '');
+
+            if (task == 'yes') {
+                alert('Right');
+            } else {
+                alert('wrong');
+            }
+        }
+        function done() {
+            let done = confirm('if task is done', '');
+
+            if (done) {
+                alert('Good work');
+            } else {
+                alert('Hurry! Up');
+            }
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

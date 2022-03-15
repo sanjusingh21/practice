@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <title>
+        box-sizing
+    </title>
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        #box {
+            border: 10px solid black;
+            width: 400px;
+            height: 300px;
+            margin: 10 auto;
+            padding: 50px 20px 20px 40px;
+            box-sizing: border-box;
+
+        }
+
+        #box1 {
+            border: 10px solid black;
+            width: 400px;
+            height: 300px;
+            margin: 20px auto;
+            padding: 50px 10px 10px 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">
+        <h2>without using box-sizing
+            box will look like this
+        </h2>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam laborum distinctio dignissimos nemo, ducimus,
+            dolorem quia eum ullam sapiente amet delectus inventore doloribus, commodi perferendis sequi cumque nostrum.
+            Consequuntur, nostrum.
+        <h3>The both box size is same becouse we using box padding and thick border box width and hieght is extendend
+            and in this box we are not using box sizing
+        </h3>
+        </p>
+    </div>
+
+    <h1>Hello World</h1>
+    <div id="box">
+        <h2>After using box-sizing</h2>
+        <!--if you give padding to the div from inside the div
+        height and width will be extend and div width and heigt 
+        going to be extend and 
+        if you use box-sizing so only height will extend but 
+        with not going to extend becouse of box sizing -->
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur earum quod, consectetur, deleniti saepe
+            reiciendis debitis, eum laudantium vel rerum quis qui culpa consequuntur inventore. Quidem sapiente
+            provident iure quae.
+        </p>
+    </div>
+
+</body>
+
+</html>

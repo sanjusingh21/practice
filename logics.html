@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logics</title>
+</head>
+
+<body>
+
+    <button id="btn">Click Me</button>
+
+    <script>
+
+        // var res = [1, 2, 3, 4, 5].map(item => 2 ** item);
+        // console.log(res);
+
+        function range(start, stop, step) {
+            return (
+                Array.from(
+                    { length: (stop - start) / step + 1 },
+                    (_, i) => start + (i * step)
+                )
+            );
+        }
+
+        let form = Array.from({ length: 5 }, (item, index) => 2 ** (index + 1));
+        console.log(form);
+
+
+        // let day = +prompt("Please enter the day number");
+        // switch (day) {
+        //     case 1:
+        //         console.log("sunday");
+        //         break;
+        //     case 2:
+        //         console.log("Monday");
+        //         break;
+        //     default:
+        //         console.log("Sorry! Please check the number you entered");
+        //         break;
+        // }
+
+
+        // // rest oprator
+        // let Sum = (a, ...args) => {
+        //     let res = args.reduce((accum, item) => accum + item);
+        //     console.log(res + a);
+        // }
+
+        // Sum(4, 10, 10, 5, 8, 40);
+        // // console.log(Sum(4, 10, 10));
+
+        // function SumAll() {
+        //     return [...arguments].reduce((accum, item) => accum + item);
+        // }
+        // var res = SumAll(10, 20, 30, 40, 50);
+        // console.log(res);
+
+
+
+
+        // let Welcome = () => {
+        //     console.log(this);
+        // }
+
+        // let btn = document.getElementById("btn");
+        // btn.addEventListener("click", Welcome);
+
+        // function Welcome() {
+        //     console.log(this);
+        // }
+
+
+        // -----> function declaration or function statment
+        // function factorial1(n) {
+        //     console.log(this);
+        //     if (n === 1 || n === 0) {
+        //         console.log("first " + n);
+        //         return 1;
+        //     } else {
+        //         console.log("second " + n);
+        //         return n * factorial1(n - 1);
+        //     }
+        // }
+
+
+
+        // -----> function expression
+        // let factorial2 = function (n) {
+        //     console.log(this);
+        //     if (n === 1 || n === 0) {
+        //         console.log("first " + n);
+        //         return 1;
+        //     } else {
+        //         console.log("second " + n);
+        //         return n * factorial2(n - 1);
+        //     }
+        // }
+
+        // ----->  fat arrow function
+        // let factorial3 = (n) => {
+        //     console.log(this);
+        //     if (n === 1 || n === 0) {
+        //         console.log("first " + n);
+        //         return 1;
+        //     } else {
+        //         console.log("second " + n);
+        //         return n * factorial3(n - 1);
+        //     }
+        // }
+
+        // let factResult = factorial3(5);
+        // console.log(factResult);
+
+        // 5! = 5*4*3*2*1
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <style>
+        .passwd_grp {
+            position: relative;
+            width: 300px;
+        }
+
+        .passwd_grp input {
+            padding: 10px 15px;
+            width: 100%;
+        }
+
+        .passwd_grp i {
+            position: absolute;
+            right: -15px;
+            z-index: 9;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <input type="password" id="passwd">
+    <button onclick="showPassword(this)">Show Password</button>
+
+    <script>
+
+        var passwd = document.getElementById('passwd');
+        var demo = document.getElementById('demo');
+
+        var showPassword = (elem) => {
+            if (passwd.type == "password") {
+                passwd.type = "text";
+                elem.innerText = "Hide Password";
+            } else {
+                passwd.type = "password";
+                elem.innerText = "Show Password";
+            }
+            // (passwd.type == "password") ? passwd.type = "text" : passwd.type = "password";
+            // (passwd.type == "password") ? elem.innerText = "Hide Password" : elem.innerText = "Show Password";
+
+            // if (passwd.type == "password")
+            //     passwd.type = "text";
+            // else
+            //     passwd.type = "password";
+        }
+    </script>
+
+    <!-- <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+        <div class="passwd_grp">
+            <input type="password" id="passwd">
+            <i class="far fa-eye-slash" onclick="showPassword(this)"></i>
+        </div>
+    </div>
+
+    <script>
+        var passwd = document.getElementById('passwd');
+        var demo = document.getElementById('demo');
+
+        var showPassword = (elem) => {
+            if (passwd.type == "password") {
+                passwd.type = "text";
+                elem.className = "far fa-eye";
+            } else {
+                passwd.type = "password";
+                elem.className = "far fa-eye-slash";
+            }
+        }
+    </script> -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Loop</title>
+</head>
+
+<body>
+    <script>
+        // for(initialization; condition; increment/decrement){
+
+        //     //Block of code
+        // }
+
+        // if (condition) {
+        //     // Block of code
+        // }
+
+        /*
+                2*1 = 2;
+                2*2 = 4;
+                  3
+                2*10 = 20
+        */
+        // "use strict";
+
+        // for (var i = 1; i <= 1; i++) {
+        //     console.log(i);
+        // }
+
+        // initialization
+        // var i = 1;
+        // while (i <= 10) {
+        //     console.log(i + " From while loop");
+        //     i++;
+        //     // increment/ decrement
+        // }
+
+        // var i = 1;
+        // do {
+        //     // block of code
+        //     console.log(i);
+        //     i++;
+        // }
+        // while (i < 1) {
+        //     // increment/decrement
+        // }
+
+
+        // let arr = ["sanju", "ravi", "sudhir", "ethender"];
+
+        // for(var i=0;i<arr.length;i++){
+        //     console.log(i +" "+ arr[i]);
+        // }
+
+        // let newArr = arr.forEach((elem,index) => {
+        //     // console.log(index +" "+ elem + " Form for each looooop");
+        //     return index + " " + elem + " Form for each looooop";
+        // });
+
+        // let newArr = arr.map((item,index)=>{
+        //     // console.log(index + " " + item + " Form for each looooop");
+        //     return index + " " + item + " Form for each looooop"
+        // })
+
+        // console.log(arr);
+        // console.log(newArr);
+
+        // for (const key in object) {
+        //     if (Object.hasOwnProperty.call(object, key)) {
+        //         const element = object[key];
+
+        //     }
+        // }
+
+        // for (const iterator of object) {
+
+        // }
+
+        // let obj /*object name */ = {
+        //     // key     : "value",
+        //     firstname: 'sanju',
+        //     lastname: 'singh'
+        // }
+
+
+        // for (const key in obj) {
+        //     console.log(obj[key]);
+        // }
+
+
+        // for (var val of arr) { // for an array
+        //     console.log(val);
+        // }
+
+
+        // Question : reverse a give string;
+        // let str = "Hello World";
+        // console.log(str);
+
+        // // method1
+        // let empArr = [];
+        // for (var val of str) {
+        //     empArr.unshift(val);
+        //     // push : add a elem at the last position of an array
+        //     // pop  : remove a elem at the last position of an array
+        //     // shif : remove a elem at the first position of an array
+        //     // unshift : add a elem at the first postion of an array
+        // }
+        // console.log(empArr.join(""));
+
+        // // array methods of removing and adding an array elements
+        // empArr.push("sanju")
+        // console.log(empArr);
+
+        // empArr.pop("sanju");
+        // console.log(empArr);
+
+        // empArr.unshift("sanju");
+        // console.log(empArr);
+
+        // empArr.shift("sanju");
+        // console.log(empArr);
+
+        // console.log(str);
+
+        // // method 2
+        // let arr1 = str.split("");
+        // console.log(arr1);
+        // arr1.reverse();
+        // console.log(arr1);
+        // let arrResult = arr1.join("");
+        // console.log(arrResult);
+
+
+        // function reverseString(str) {
+        //     return str.split("").reverse().join("");
+        // }
+        // console.log(reverseString("Hello"));
+
+        // let arr = ["sanju", "ravi", "sudhir", "ethender"];
+        // let arr1 = [12, 24, 36, 20];
+        // let str = "this is the javascript practice.";
+
+        // find // array.find(function(currentValue, index, arr),thisValue)
+        // search // this method is used for string
+        // indexOf
+        // includes
+        // lastIndexOf
+        // some
+        // every
+
+        // console.log(arr.includes("ravi")); // returns a true/false;
+        // console.log(arr.indexOf("ravi"));
+        // arr.find((item) => {
+        //     if (item == "ravi") {
+        //         console.log(item);
+        //     }
+        // });
+
+        // let x = arr1.find((item) => {
+        //     return item > 12;
+        // });
+        // console.log(x);
+        // console.log(str.search("javascript"));
+        // console.log(str.includes("javascript"));
+        // console.log(str.indexOf("javascript"));
+        // console.log(str.lastIndexOf("javascript") + " - form the last index");
+        // let x = arr1.some((item) => {
+        //     return item > 12;
+        // });
+        // console.log(x);
+
+        // let y = arr1.every((item) => {
+        //     return item > 10;
+        // });
+        // console.log(y);
+
+
+
+
+        let fetchRes = fetch("https://jsonplaceholder.typicode.com/todos/1")
+            .then((res) => {
+                console.log(res);
+                return res.json();
+            })
+            .then(d => {
+                console.log(d)
+            });
+
+
+
+
+
+    </script>
+</body>
+
+</html>

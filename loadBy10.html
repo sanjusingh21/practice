@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load By 10</title>
+</head>
+
+<body>
+    <h1>Load By 10 </h1>
+    <div id="data"></div>
+    <button onclick="loadMore()" id="loadbtn">Load More</button>
+    <script>
+        let data = document.getElementById("data");
+        let loadbtn = document.getElementById("loadbtn");
+        let i = 0;
+        function loadMore() {
+            while (i <= 100) {
+                i++;
+                data.innerHTML += i + "<br/>";
+                if (i == 100) {
+                    loadbtn.style.display = "none";
+                }
+                if (i % 10 == 0) {
+                    break;
+                }
+            }
+        }
+        loadMore();
+    </script>
+
+
+    <!-- <h1 style="padding-bottom: 10px;">My test</h1>
+    <p id="demo"></p>
+    <button type="button" id="btn" onclick="myfunction(); ">LoadMore..</button>
+    <script>
+        var count = 0;
+        var x = 1;
+        function myfunction() {
+            for (var i = x; i <= 100; i++) {
+
+                document.getElementById("demo").innerHTML += i + "<br>";
+                count++;
+                if (count == 10) {
+                    count = 0;
+                    x = i + 1;
+                    break;
+                }
+            }
+            if (i == 100) {
+                document.getElementById("btn").style.display = 'none';
+            }
+            return x;
+        }
+        x = myfunction();
+
+    </script> -->
+
+
+    <!-- <h1 style="padding-bottom: 10px;">My test</h1>
+    <p id="demo"></p>
+    <button type="button" id="btn" onclick="myfunction()">LoadMore..</button>
+    <script>
+        var count = 0;
+        var lv = 1;
+        function myfunction() {
+            for (var i = lv; i <= 100; i++) {
+                document.getElementById("demo").innerHTML += i + "<br>";
+                count++;
+                if (count == 10) {
+                    count = 0;
+                    lv = i + 1;
+                    break;
+                }
+            }
+            if (i == 100) {
+                document.getElementById("btn").style.display = 'none';
+            }
+        }
+    </script> -->
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewApproch</title>
+</head>
+
+<body>
+    <script>
+        var stooges = [
+            { name: 'moe', age: 40 },
+            { name: 'larry', age: 50 },
+            { name: 'curly', age: 60 }
+        ];
+
+        let pluck = (array, objectKey) => {
+            let newArray = [];
+            for (let arrayKey of array) {
+                newArray.push(arrayKey[objectKey]);
+            }
+            return newArray;
+        }
+
+
+        var objRes = pluck(stooges, "age");
+
+        console.log(objRes);
+
+
+
+
+        // _.pluck(stooges, 'name');
+        //         ["moe", "larry", "curly"]
+    </script>
+</body>
+
+</html>

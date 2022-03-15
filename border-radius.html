@@ -1,0 +1,115 @@
+<html>
+
+<head>
+    <title>box radius</title>
+    <style>
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .box {
+            border: 2px solid black;
+            width: 300px;
+            height: 100px;
+            border-top-left-radius: 30px;
+            padding-top: 30px;
+            padding-left: 10px;
+            margin-bottom: 40px;
+        }
+
+        .box1 {
+            width: 300px;
+            height: 100px;
+            border: 2px solid black;
+            margin-bottom: 40px;
+            border-top-right-radius: 40px;
+        }
+
+        .box2 {
+            width: 300px;
+            height: 100px;
+            border: 2px solid black;
+            margin-bottom: 40px;
+            border-bottom-right-radius: 30px;
+        }
+
+        .box3 {
+            width: 300px;
+            height: 100px;
+            border: 2px solid black;
+            margin-bottom: 40px;
+            border-bottom-left-radius: 40px;
+            padding-left: 40px;
+
+        }
+
+        .box_all {
+            border: 2px solid black;
+            width: 500px;
+            height: 200px;
+            padding-top: 50px;
+            box-sizing: border-box;
+            border-radius: 20px 10px 30px 20px;
+        }
+
+        #kamala {
+            border: 3px solid purple;
+            margin-top: 50px;
+            width: 400px;
+            height: 200px;
+            padding: 40px 30px;
+            box-sizing: border-box;
+            border-radius: 30px 50px 20px 60px;
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>border radius</h1>
+    <div class="box">
+        <!--In this box we given the radius from top left corner-->
+        <p>
+            Border radius top-left <br>
+            Border radius top left remove sharp corners of the box
+        </p>
+    </div>
+    <div class="box1">
+        <!--In this box we given the radius from the top right corner -->
+        <p>
+            Border radius top right <br>
+            Border radius top right remove box sharp corner from the top right corner
+        </p>
+    </div>
+    <div class="box2">
+        <!--In this box we given the radius from the bottom right corner-->
+        <p>
+            border radius bottom right <br>
+            border radius remove bottom right corner sharp corner
+        </p>
+    </div>
+    <div class="box3">
+        <p>
+            border radius bottom left <br>
+            Border radius remove the sharpness from the bottom left corner
+        </p>
+    </div>
+    <div class="box_all">
+        <p>
+            from all side border radius <br>
+            Border-radius 20px top left 10px top right
+            30px bottom right 20px bottom left
+
+        </p>
+    </div>
+    <div id="kamala">
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos fuga deleniti, blanditiis, officia dolores
+            quidem ab labore molestiae quae provident repellat in earum quis a quisquam quasi facilis assumenda
+            aspernatur?
+        </p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods</title>
+</head>
+
+<body>
+    <script>
+        // string.charAt(index)
+        // 1. charAt() : return the charecter at the given index position.
+        let res1 = "HELLO WORLD";
+        let res1_1 = res1.charAt(2);
+        console.log(res1_1);
+
+        // 1.1 : example : find the last charecter in the given string
+        let res1_1_1 = "HELLO WORLD";
+        let res1_1_2 = res1_1_1.charAt(res1_1_1.length - 1);
+        console.log(res1_1_2);
+
+        // string.charCodeAt(index)
+        // 2. charCodeAt() : return the charecter unicode of the given index position.
+        let res2 = "HELLO WORLD";
+        let res2_1 = res2.charCodeAt(1);
+        console.log(res2_1);
+
+        // string.concat(string1, string2, ..., stringX)
+        // 3. concat() : joins two or more strings, does not change the existing strings and returns a new string
+        let res3 = "Hello";
+        let res3_1 = "world!";
+        let res3_2 = res3.concat(" ", res3_1);
+        console.log(res3_2);
+
+        // 3.1 : example :  joining the multiple strings
+        let res3_1_1 = "Hello";
+        let res3_1_2 = "world!";
+        let res3_1_3 = "Have a nice day!";
+        let res3_1_4 = res3_1_1.concat(" ", res3_1_2, " ", res3_1_3);
+        console.log(res3_1_4);
+
+        // string.endsWith(searchvalue, length)
+        /* 4. endsWith() : returns true if a string ends with a specified string.
+                          ***method is case sensitive.
+        */
+        let res4 = "Hello world";
+        let res4_1 = res4.endsWith("world");
+        console.log(res4_1); // true
+
+        // 4.1 : example 
+        let res4_1_1 = "Hello world, welcome to the universe.";
+        let res4_1_2 = res4_1_1.endsWith("world", 11);
+        console.log(res4_1_2); // true
+        let res4_1_3 = res4_1_1.endsWith("world", 15);
+        console.log(res4_1_3); // false
+
+        // String.fromCharCode(n1, n2, ..., nX)
+        /* 5. fromCharCode() : method converts Unicode values to characters,
+                              **static method of the String object.
+        */
+        let res5 = String.fromCharCode(65);
+        console.log(res5);
+
+        // 5.1 : example : converting the multiple charecters
+        let res5_1_1 = String.fromCharCode(72, 69, 76, 76, 79);
+        console.log(res5_1_1);
+
+        // string.includes(searchvalue, start)
+        /* 6. includes() : method returns true if a string contains a specified string
+                         ** method is case sensitive.
+        */
+        let res6 = "Hello world, welcome to the universe.";
+        let res6_1 = res6.includes("world");
+        console.log(res6_1); // true
+
+        // 6.1 : example
+        let res6_1_1 = "Hello World, welcome to the universe.";
+        let res6_1_2 = res6_1_1.includes("world", 12);
+        console.log(res6_1_2); // false
+
+        // string.indexOf(searchvalue, start)
+        /* 7. indexOf() : returns the position of the first occurrence of a specified value in a string.
+                         ** returns -1 if the value is not found.
+                         ** method is case sensitive.
+        */
+        let res7 = "Hello world, welcome to the universe.";
+        let res7_1 = res7.indexOf("welcome");
+        console.log(res7_1); // 13
+
+        let res7_2 = res7.indexOf("Welcome"); // here we are trying to serach with capital "W" in welcome
+        console.log(res7_2); // -1
+
+        // 7.1 : example 
+        let res7_1_1 = "Hello world, welcome to the universe.";
+        let res7_1_2 = res7_1_1.indexOf("e");
+        console.log(res7_1_2); // 1
+
+        // 7.2 : example : seraching after a specific index value
+        let res7_2_1 = "Hello world, welcome to the universe.";
+        let res7_2_2 = res7_2_1.indexOf("e", 5);
+        console.log(res7_2_2); // 14
+
+        //string.lastIndexOf(searchvalue, start)
+        // 8. lastIndexOf() : method returns the index (position) of the last occurrence of a specified value in a string.
+        let res8 = "Hello planet earth, you are a great planet.";
+        let res8_1 = res8.lastIndexOf("planet");
+        console.log(res8_1); // 36
+
+        // 8.1 : example
+        let res8_1_1 = "Hello planet earth, you are a great planet.";
+        let res8_1_2 = res8_1_1.lastIndexOf("planet", 20);
+        console.log(res8_1_2); // 6
+
+        // string.length
+        // 9. length : property returns the length of a string.
+        let res9 = "Hello World!";
+        let res9_1 = res9.length;
+        console.log(res9_1);
+
+
+        // string.localeCompare(compareString)
+        /* 10. localeCompare() :  compares two strings in the current locale
+                                ** returns sort order -1, 1, or 0 (for before, after, or equal).
+                                ** The current locale is based on the language settings of the browser.
+        */
+        let res10 = "ab";
+        let res10_1 = "cd";
+        let res10_3 = res10.localeCompare(res10_1);
+        console.log(res10_3); // -1
+
+        // 10.1 : example
+        let res10_1_1 = "cd";
+        let res10_1_2 = "ab";
+        let res10_1_3 = res10_1_1.localeCompare(res10_1_2);
+        console.log(res10_1_3); // 1
+
+        // 10.2 : example
+        let res10_2_1 = "ab";
+        let res10_2_2 = "ab";
+        let res10_2_3 = res10_2_1.localeCompare(res10_2_2);
+        console.log(res10_2_3); // 0
+
+        // 10.3 : example
+        let res10_3_1 = "A";
+        let res10_3_2 = "a";
+        let res10_3_3 = res10_3_1.localeCompare(res10_3_2);
+        console.log(res10_3_3); // 1
+
+        // string.match(regexp)
+        /* 11. match() : searches a string for a match against a "regular expression".
+                        ** returns the matches in an array
+                        ** returns null if no match is found.
+
+                        // some more points
+                        ** g : here "g" mean globle in the entire string otherwise it search for the first vlaue.
+                        ** i : for incase sensitive
+                        ** m : for multiline
+        */
+        let res11 = "The rain in SPAIN stays mainly in the plain";
+        let res11_1 = res11.match(/ain/g); // here we are searching for a string "ain" in the give string
+        console.log(res11_1); // (3) ['ain', 'ain', 'ain']
+
+        // 11.1 : example : without the globle flage
+        let res11_1_1 = "The rain in SPAIN stays mainly in the plain";
+        let res11_1_2 = res11_1_1.match(/ain/); // without globle flag
+        console.log(res11_1_2); //['ain', index: 5, input: 'The rain in SPAIN stays mainly in the plain', groups: undefined]
+
+        // string.repeat(count)
+        /* 12. repeat() : returns a string with a number of copies of a string
+                        **  returns a new string and does not change the original string
+        */
+        let res12 = "Hello world! ";
+        let res12_1 = res12.repeat(2);
+        console.log(res12_1); // Hello world! Hello world! 
+
+        // string.replace(searchValue, newValue)
+        /* 13. replace() : searches a string for a value or a regular expression
+                         ** returns a new string with the value(s) replaced
+                         ** if not matches found returns the original string.
+        */
+        let res13 = "Visit Microsoft!";
+        let res13_1 = res13.replace("Microsoft", "W3Schools");
+        console.log(res13_1);
+
+        // 13.1 : example : using reg expersion ( replacing at multiple place which is can not done by the above method).
+        let res13_1_1 = "Mr Blue has a blue house and a blue car";
+        let res13_1_2 = res13_1_1.replace(/blue/g, "red");
+        console.log(res13_1_2);
+
+        // string.search(searchValue)
+        /* 14. search() : searches a string for a value
+                        ** returns the index (position) of a match
+                        ** method returns -1 if no match is found.
+                        ** method is case sensitive.
+        */
+        let res14 = "Mr. Blue has a blue house";
+        let res14_1 = res14.search("Blue");
+        console.log(res14_1); // 4
+
+        let res14_2 = res14.search("blue"); // example for case sensitive
+        console.log(res14_2); // 15
+
+        let res14_3 = res14.search("BLUE"); // example for not string match
+        console.log(res14_3); // -1
+
+        // string.slice(start, end)
+        /* 15. slice() : extracts a part of a string
+                        ** returns the extracted part in a new string.
+        */
+        let res15 = "Hello world!";
+        let res15_1 = res15.slice(1, 5);
+        console.log(res15_1); // ello
+
+        // 15.2 : example : returns the last charecter form a string
+        let res15_2 = res15.slice(-1);
+        console.log(res15_2); // !
+
+        // string.split(separator, limit)
+        /* 16. split() : splits a string into an array of substrings
+                        ** returns the new array
+        */
+        let res16 = "How are you doing today?";
+        const res16_1 = res16.split(" ");
+        console.log(res16_1); // (5) ['How', 'are', 'you', 'doing', 'today?']
+
+        // string.startsWith(searchValue, start)
+        // 17. startsWith() : method returns true if a string starts with a specified string
+        let res17 = "Hello world, welcome to the universe.";
+        let res17_1 = res17.startsWith("Hello");
+        console.log(res17_1); // true
+
+        // 17.1 : example
+        let res17_1_1 = "Hello world, welcome to the universe.";
+        let res17_1_2 = res17_1_1.startsWith("world", 7);
+        console.log(res17_1_2); // false
+
+        // string.substr(start, length)
+        // 18. substr() : extracts a part of a string
+        let res18 = "Hello world!";
+
+        let res18_1 = res18.substr(1, 4);
+        console.log(res18_1); // ello
+
+        // 18.2 : example : extrating string for the last 5 chars
+        let res18_2 = res18.substr(-5, 5);
+        console.log(res18_2); // orld!
+
+        // string.substring(start, end)
+        /* 19. substring() :  extracts characters, between to indices (positions), from a string, and returns the substring.
+                        ** If start is greater than end, arguments are swapped: (1, 4) = (4, 1).
+        */
+        let res19 = "Hello world!";
+        let res19_1 = res19.substring(1, 4);
+        console.log(res19_1); // ell
+
+        // string.toLocaleLowerCase()
+        /* 20. toLocaleLowerCase() : converts a string to lowercase letters, using current locale.
+                                    ** The toLocaleLowerCase() returns the same result as toLowerCase(), except for locales that conflict with the regular Unicode case mappings (such as Turkish).
+        */
+        let res20 = "Hello World!";
+        let res20_1 = res20.toLocaleLowerCase();
+        console.log(res20_1);
+
+        // string.toLocaleUpperCase()
+        /* 21. toLocaleUpperCase() : converts a string to uppercase letters, using current locale.
+                                    ** The toLocaleUpperCase() returns the same result as toUpperCase(), except for locales that conflict with the regular Unicode case mappings (such as Turkish).
+        */
+        let res21 = "Hello World!";
+        let res21_1 = res20.toLocaleUpperCase();
+        console.log(res21_1);
+
+        // string.toLowerCase()
+        // 22. toLowerCase() : converts a string to lowercase letters, does not change the original string
+        let res22 = "Hello World!";
+        let res22_1 = res22.toLowerCase();
+        console.log(res22_1);
+
+        // string.toString()
+        /* 23. toString() : returns a string as a string
+                            ** used to convert a string object into a string.
+        */
+        let res23 = new String("Hello World!");
+        let res23_1 = res23.toString();
+        console.log(res23_1);
+
+        // string.toUpperCase()
+        // 24. toUpperCase() : converts a string to uppercase letters, does not change the original string
+        let res24 = "Hello World!";
+        let res24_1 = res22.toUpperCase();
+        console.log(res24_1);
+
+        // string.trim()
+        // 25. trim() :  removes whitespace from both sides of a string
+        let res25 = "       Hello World!        ";
+        let res25_1 = res25.trim();
+        console.log(res25_1);
+
+        // string.valueOf()
+        /* 26. valueOf() :  returns the primitive value of a string 
+                            ** used to convert a string object into a string.
+        */
+        let res26 = new String("Hello World!");
+        console.log(res26);
+        let res26_1 = res26.valueOf();
+        console.log(res26_1);
+
+        // string.at(index)
+        // 27. at() : returns a charecter at give index postion of string
+        let res27 = "Hello World";
+        let res27_1 = res27.at(1);
+        console.log(res27_1);
+
+        // [icon/unicode].codePointAt(pos)
+        // 28. codePointAt() : returns a UTF-16 code point value of given icon
+        let res28 = '😍'.codePointAt(0);
+        console.log(res28); // 128525
+
+        let res28_1 = 'ABC'.codePointAt(42);
+        console.log(res28_1) // undefined
+
+        // unicode.normalize()
+        /* 29. normalize() : method returns the Unicode Normalization Form of the string.
+                            ** rarly used not that much important
+        */
+        let res29 = '\u0041';
+        let res29_1 = res29.normalize();
+        console.log(res29_1);
+
+        // string.matchAll()
+        /* 30. matchAll() : method returns an iterator of all results matching a string against a regular expression
+                          ** need more clarity
+        */
+        const regexp30 = /t(e)(st(\d?))/g;
+        const str30 = 'test1test2';
+        const array30 = [...str30.matchAll(regexp30)];
+        console.log(array30[0]);
+        console.log(array30[1]);
+
+        // string.padEnd(targetLength,padString) 
+        // 31. padEnd() : method pads the current string with a given string (repeated, if needed) so that the resulting string reaches a given length. The padding is applied from the end of the current string.
+        let res31 = 'Breaded Mushrooms';
+        let res31_1 = res31.padEnd(25, '.')
+        console.log(res31_1);
+
+        // 31.1 :example
+        let res31_1_1 = '200';
+        let res31_1_2 = res31_1_1.padEnd(25);
+        console.log(res31_1_2);
+
+        // string.padStart(targetLength, padString)
+        // 32. padStart() :  method pads the current string with another string (multiple times, if needed) until the resulting string reaches the given length. The padding is applied from the start of the current string.
+        let res32 = '5';
+        let res32_1 = res32.padStart(3, '0');
+        console.log(res32_1);
+
+        // replaceAll([regexp/substr], [newSubstr/replacerFunction])
+        /* 33. replaceAll() : method returns a new string with all matches of a pattern replaced by a replacement.
+                            ** The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match.
+        */
+        const res33 = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
+        const res33_1 = res33.replaceAll('dog', 'monkey');
+        console.log(res33_1);
+
+        // 33.1 : example 
+        const res33_1_1 = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
+        const regex33_1 = /Dog/ig;
+        const res33_1_2 = res33_1_1.replaceAll(regex33_1, 'ferret');
+        console.log(res33_1_2);
+
+
+        // string.trimEnd() or string.trimRight();
+        // 34. trimRight() or trimEnd(): method removes whitespace from the end of a string. trimRight() is an alias of this method.
+        const res34 = '   Hello world!   ';
+        const res34_1 = res34.trimEnd()
+        console.log(res34_1);
+
+        const res34_2 = res34.trimRight()
+        console.log(res34_2);
+
+        // string.trimStart() or string.trimLeft();
+        // 35. trimStart() or trimLeft(): method removes whitespace from the start of a string. trimLeft() is an alias of this method.
+        const res35 = '   Hello world!   ';
+        const res35_1 = res35.trimStart()
+        console.log(res35_1);
+
+        const res35_2 = res35.trimStart()
+        console.log(res35_2);
+
+        //RegExpObject.test(string)
+        /* 36. test() : method tests for a match in a string
+                        ** If it finds a match, it returns true, otherwise it returns false.
+        */
+        let res36 = "The best things in life are free";
+        let pattern36 = /best/;
+        let res36_1 = pattern36.test(res36);
+        console.log(res36_1); // true
+
+        let pattern36_2 = /best people/;
+        let res36_2 = pattern36_2.test(res36);
+        console.log(res36_2); // false
+
+    </script>
+
+</body>
+
+</html>

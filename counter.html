@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .formArea {
+            padding: 20px;
+        }
+
+        .formgroup {
+            margin-bottom: 10px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo"></div>
+
+    <button onclick="increment()">Increment</button>
+    <button onclick="decrement()">Decrement</button>
+    <button onclick="reset()">Reset</button>
+
+
+    <div class="formArea">
+        <form action="" autocomplete="off" onsubmit="return formSubmit(this)">
+            <div class="formgroup">
+                <label for="name">Name :</label>
+                <input type="text" name="username" id="username" />
+            </div>
+            <div class="formgroup">
+                <label for="email">Email :</label>
+                <input type="text" name="email" id="email" />
+            </div>
+            <div class="formgroup">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <table border="1" class="table">
+        <thead>
+            <tr>
+                <th>SNo</th>
+                <th>Name</th>
+                <th>email</th>
+            </tr>
+        </thead>
+        <tbody id="table_data"> </tbody>
+    </table>
+
+
+    <script>
+        var demo = document.getElementById("demo");
+
+        var count = 0;
+        demo.innerHTML = count;
+        let increment = () => {
+            demo.innerHTML = ++count;
+        }
+        let decrement = () => {
+            demo.innerHTML = --count;
+        }
+        let reset = () => {
+            count = 0;
+            demo.innerHTML = count;
+        }
+
+        // form handeling
+        let isValid = true;
+        let table_data = document.getElementById("table_data");
+        let dataArr = [];
+        let userArr = [];
+        let finalObj = {};
+
+        let formSubmit = (cForm) => {
+
+            let username = cForm.username.value.trim();
+            let email = cForm.email.value.trim();
+
+            // form validations
+            if (username === "") {
+                alert("username is required");
+                isValid = false;
+            } else {
+                isValid = true;
+            }
+
+            if (email === "") {
+                alert("Email-id is required");
+                isValid = false;
+            } else {
+                isValid = true;
+            }
+
+
+            // creating an object
+            finalObj = {
+                username,
+                email
+            };
+
+            // filtering the duplicate values
+            if (isValid === true) {
+                dataArr = [...dataArr, finalObj];
+                // if (!userArr.includes(finalObj.username)) {
+                //     userArr.push(username);
+                // }
+
+                userArr = [...new Set(dataArr)];
+
+                console.log(dataArr);
+                console.log(userArr);
+            }
+
+
+
+            // // console.log(`username : ${username}, email : ${email}`);
+            // // console.log(finalObj);
+            // // console.log(JSON.stringify(finalObj));
+            // if (isValid === true) {
+            //     dataArr.push(finalObj);
+
+            //     let newArr = [];
+
+            //     dataArr.forEach((item) => {
+
+
+            //         // if (item.username != username) {
+            //         //     newArr.push(item);
+            //         // }
+            //     });
+
+            //     // console.log(newArr);
+
+
+
+            //     // console.log(dataArr)
+            //     // dataArr.forEach((item, ind) => {
+            //     //     if (item.username != username) {
+            //     //         table_data.insertAdjacentHTML("beforeend", `
+            //     //             <tr>
+            //     //                 <td>${ind + 1}</td>
+            //     //                 <td>${item.username}</td>
+            //     //                 <td>${item.email}</td>
+            //     //             </tr>   
+            //     //         `);
+            //     //     }
+            //     // });
+            // }
+            return false;
+        }
+
+
+
+    </script>
+</body>
+
+</html>

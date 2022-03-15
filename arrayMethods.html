@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>My First JavaScript</h2>
+    <div id="data"></div>
+    <script>
+
+        let arr1 = ["sanju", "singh", 8];
+
+        //console.log(arr1[3]);
+
+        let arr2 = new Array(1, 3, 5);
+
+        let obj = { firstname: "sanju", lastname: "singh" }
+
+        /* console.log(arr1);
+        console.log(arr2);
+        console.log(obj);
+        
+        console.log(obj.firstname + " " + obj.lastname);*/
+
+
+        let users = [
+            { firstname: "sanju", lastname: "singh", orderID: "5789", address: 'HYD' },
+            { firstname: "kailash", lastname: "singh", orderID: "2587", address: 'Mehdhipantam' }
+        ]
+
+        /* users.map((item,index) => {
+            console.log(item);
+        }); */
+
+
+
+        let data = document.getElementById('data');
+
+        for (let i = 0; i < users.length; i++) {
+            let row = `<table border=1 style="border-collapse:collapse;margin-bottom:10px;">
+        		<thead>
+                	<tr>
+                    	<th>FirstName</th>
+                        <th>LastName</th>
+                        <th>OrderID</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+        		<tbody>
+                	<tr>
+                    	<td>${users[i].firstname}</td>
+                        <td>${users[i].lastname}</td>
+                        <td>${users[i].orderID}</td>
+                        <td>${users[i].address}</td>
+                    </tr>
+                </tbody>
+        		
+        </table>`;
+
+            data.innerHTML += row;
+
+        }
+
+   //console.log("array length = " + users.length);
+
+    </script>
+
+</body>
+
+</html>

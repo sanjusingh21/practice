@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hello {
+            text-decoration: underline;
+            color: red;
+            background-color: yellow;
+
+        }
+
+        /* this is test */
+        .world {
+            margin-top: 10px;
+            padding: 20px;
+            text-align: center;
+            text-transform: unset;
+            color: black;
+            border: 1px solid black;
+            height: 100px;
+            width: 400px;
+            outline-width: 2px;
+            outline-color: red;
+            outline-style: solid;
+            outline-offset: 5px;
+            margin-left: 20px;
+        }
+
+        .world span {
+            text-decoration: line-through;
+            text-decoration-color: red;
+        }
+
+        #btn {
+            border-radius: 10px;
+            background-color: skyblue;
+            color: white;
+        }
+
+        #btn:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!---this is test only-->
+
+    <h1 class="hello">Hello world text color</h1>
+    <p class="world"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas similique dolore maiores iusto
+        dolor quo non, <span>consequatur</span>, eum consequuntur suscipit quae explicabo vero ipsa eligendi. Minus,
+        quibusdam
+        possimus? Debitis, cumque.</p>
+
+    <p>Get your awnser click on this button</p>
+
+    <button id="btn" onclick="myfunction()">
+        Click Here
+    </button>
+
+    <script>
+        // this is checking of types of and about alert
+        function myfunction() {
+            alert("This is your answer");
+        }
+
+        var x = 44;
+        var z = "kailsh";
+        console.log(typeof 44);
+        console.log(typeof 'kailsh');
+        console.log(typeof true);
+        console.log(typeof undefined);
+
+        alert(5 + 5);
+    </script>
+
+</body>
+
+
+</html>

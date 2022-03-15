@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="docs">
+        <h2>Prototype Inheritance</h2>
+        <p>All JavaScript objects inherit properties and methods from a prototype:</p>
+        <ul>
+            <li><code class="w3-codespan">Date</code> objects inherit from <code class="w3-codespan">Date.prototype</code></li>
+            <li><code class="w3-codespan">Array</code> objects inherit from <code class="w3-codespan">Array.prototype</code>
+            </li>
+            <li><code class="w3-codespan">Person</code> objects inherit from <code class="w3-codespan">Person.prototype</code>
+            </li>
+        </ul>
+        <p>The <code class="w3-codespan">Object.prototype</code> is on the top of the prototype inheritance chain:</p>
+        <p><code class="w3-codespan">Date</code> objects, <code class="w3-codespan">Array</code> objects, and <code
+                class="w3-codespan">Person</code> objects inherit from <code class="w3-codespan">Object.prototype</code>.</p>
+        <hr>
+        <h2>Adding Properties and Methods to Objects</h2>
+        <p>Sometimes you want to add new properties (or methods) to all existing objects of a given type.</p>
+        
+        <p>Sometimes you want to add new properties (or methods) to an object
+            constructor.</p>
+    </div>
+
+
+    <button onclick="addSomecontent()">Click Me</button>
+
+
+    <script>
+
+        let startPos = null;
+        var endPos = null;
+
+        document.getElementById("docs").onclick = function(e){
+            // let target = e.target.getSelection();
+            // var startPos = this.selectionStart;
+            // var endPos = this.selectionEnd;
+            // console.log(startPos + ", " + endPos);
+            let sel = document.getSelection();
+            var pos = sel.toString().length;
+            console.log(sel);
+        }
+
+        // function addSomecontent(){
+
+        //     if(startPos == null || endPos == null ){
+        //         alert("select are to insert");
+        //         return false;
+        //     }
+        //     console.log(startPos + ", " + endPos);
+        // }
+
+        // function Person(){
+        //     this.name = "sanju";
+        // }
+
+
+        // Person.prototype.newMethod = function(){
+        //     console.log(this.name);
+        // }
+        
+        
+        // let x = new String("fsdf");
+        
+        // console.log(typeof x);
+
+
+
+        // learn about the prototype methos
+
+        // const obj = {
+
+        // }
+
+        
+
+        // obj.prototype.newMethod = function () {
+        //     console.log("New Method");
+        // }
+
+
+        // obj.newMethod();
+
+    </script>
+
+</body>
+
+</html>

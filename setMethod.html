@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Method</title>
+</head>
+
+<body>
+    <script>
+        let arr = ['Sonu', 'Rinky', 'Mounty', 'Rekha', 'Rinky'];
+
+        let mySet = new Set(arr);
+        mySet.add("Jaya");  // use to add an element
+        mySet.delete('Rekha'); // use to delete an element
+        console.log(mySet.has("Rinku")); // return false if no match found.
+
+        console.log(mySet);
+        mySet.forEach(item => console.log(item));
+        console.log(mySet.keys());
+        console.log(mySet.values());
+        console.log(mySet.entries());
+        console.log(mySet.size);
+
+        [...mySet.values()].forEach(x => console.log(x));
+
+        let obj = {}
+
+        let myMap = new Map([["key1", "value"]]);
+
+        console.log(myMap);
+
+
+    </script>
+</body>
+
+</html>
